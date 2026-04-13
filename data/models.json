@@ -1,0 +1,842 @@
+[
+  {
+    "name": "llama3.2:1b",
+    "display_name": "Llama 3.2 1B",
+    "category": "general",
+    "min_ram": 3,
+    "recommended_ram": 4,
+    "gpu_required": false,
+    "vram_required": null,
+    "size_billion_params": 1,
+    "ollama_tag": "llama3.2:1b",
+    "huggingface_id": "meta-llama/Llama-3.2-1B",
+    "supported_runtimes": [
+      "ollama",
+      "gguf"
+    ],
+    "use_cases": [
+      "chat",
+      "summarization"
+    ],
+    "notes": "Very lightweight and responsive on older laptops.",
+    "license": "Meta Community License"
+  },
+  {
+    "name": "llama3.2:3b",
+    "display_name": "Llama 3.2 3B",
+    "category": "general",
+    "min_ram": 4,
+    "recommended_ram": 6,
+    "gpu_required": false,
+    "vram_required": null,
+    "size_billion_params": 3,
+    "ollama_tag": "llama3.2:3b",
+    "huggingface_id": "meta-llama/Llama-3.2-3B",
+    "supported_runtimes": [
+      "ollama",
+      "gguf"
+    ],
+    "use_cases": [
+      "chat",
+      "summarization"
+    ],
+    "notes": "Excellent for low-end hardware. Fast inference.",
+    "license": "Meta Community License"
+  },
+  {
+    "name": "gemma2:2b",
+    "display_name": "Gemma 2 2B",
+    "category": "general",
+    "min_ram": 4,
+    "recommended_ram": 6,
+    "gpu_required": false,
+    "vram_required": null,
+    "size_billion_params": 2,
+    "ollama_tag": "gemma2:2b",
+    "huggingface_id": "google/gemma-2-2b-it",
+    "supported_runtimes": [
+      "ollama",
+      "gguf"
+    ],
+    "use_cases": [
+      "chat",
+      "qa"
+    ],
+    "notes": "Compact model with strong instruction following.",
+    "license": "Gemma Terms of Use"
+  },
+  {
+    "name": "phi3:mini",
+    "display_name": "Phi-3 Mini 3.8B",
+    "category": "general",
+    "min_ram": 4,
+    "recommended_ram": 8,
+    "gpu_required": false,
+    "vram_required": null,
+    "size_billion_params": 3.8,
+    "ollama_tag": "phi3:mini",
+    "huggingface_id": "microsoft/Phi-3-mini-4k-instruct",
+    "supported_runtimes": [
+      "ollama",
+      "gguf"
+    ],
+    "use_cases": [
+      "chat",
+      "reasoning"
+    ],
+    "notes": "Great quality per parameter for consumer hardware.",
+    "license": "MIT"
+  },
+  {
+    "name": "llama3.1:8b",
+    "display_name": "Llama 3.1 8B",
+    "category": "general",
+    "min_ram": 8,
+    "recommended_ram": 12,
+    "gpu_required": false,
+    "vram_required": 6,
+    "size_billion_params": 8,
+    "ollama_tag": "llama3.1:8b",
+    "huggingface_id": "meta-llama/Meta-Llama-3.1-8B-Instruct",
+    "supported_runtimes": [
+      "ollama",
+      "gguf"
+    ],
+    "use_cases": [
+      "chat",
+      "analysis"
+    ],
+    "notes": "Strong all-purpose model for mid-range systems.",
+    "license": "Meta Community License"
+  },
+  {
+    "name": "mistral:7b",
+    "display_name": "Mistral 7B",
+    "category": "general",
+    "min_ram": 8,
+    "recommended_ram": 12,
+    "gpu_required": false,
+    "vram_required": 6,
+    "size_billion_params": 7,
+    "ollama_tag": "mistral:7b",
+    "huggingface_id": "mistralai/Mistral-7B-Instruct-v0.3",
+    "supported_runtimes": [
+      "ollama",
+      "gguf"
+    ],
+    "use_cases": [
+      "chat",
+      "classification"
+    ],
+    "notes": "Reliable baseline with broad community support.",
+    "license": "Apache-2.0"
+  },
+  {
+    "name": "gemma2:9b",
+    "display_name": "Gemma 2 9B",
+    "category": "general",
+    "min_ram": 10,
+    "recommended_ram": 16,
+    "gpu_required": false,
+    "vram_required": 8,
+    "size_billion_params": 9,
+    "ollama_tag": "gemma2:9b",
+    "huggingface_id": "google/gemma-2-9b-it",
+    "supported_runtimes": [
+      "ollama",
+      "gguf"
+    ],
+    "use_cases": [
+      "chat",
+      "summarization"
+    ],
+    "notes": "Improved reasoning depth compared to smaller variants.",
+    "license": "Gemma Terms of Use"
+  },
+  {
+    "name": "qwen2.5:7b",
+    "display_name": "Qwen2.5 7B",
+    "category": "general",
+    "min_ram": 8,
+    "recommended_ram": 14,
+    "gpu_required": false,
+    "vram_required": 6,
+    "size_billion_params": 7,
+    "ollama_tag": "qwen2.5:7b",
+    "huggingface_id": "Qwen/Qwen2.5-7B-Instruct",
+    "supported_runtimes": [
+      "ollama",
+      "gguf"
+    ],
+    "use_cases": [
+      "chat",
+      "translation"
+    ],
+    "notes": "Great multilingual utility and coding-adjacent quality.",
+    "license": "Apache-2.0"
+  },
+  {
+    "name": "llama3.1:70b",
+    "display_name": "Llama 3.1 70B",
+    "category": "general",
+    "min_ram": 48,
+    "recommended_ram": 64,
+    "gpu_required": true,
+    "vram_required": 40,
+    "size_billion_params": 70,
+    "ollama_tag": "llama3.1:70b",
+    "huggingface_id": "meta-llama/Meta-Llama-3.1-70B-Instruct",
+    "supported_runtimes": [
+      "ollama",
+      "gguf"
+    ],
+    "use_cases": [
+      "analysis",
+      "long-form"
+    ],
+    "notes": "High-end model for workstation-class hardware.",
+    "license": "Meta Community License"
+  },
+  {
+    "name": "mixtral:8x7b",
+    "display_name": "Mixtral 8x7B",
+    "category": "general",
+    "min_ram": 32,
+    "recommended_ram": 48,
+    "gpu_required": true,
+    "vram_required": 24,
+    "size_billion_params": 46.7,
+    "ollama_tag": "mixtral:8x7b",
+    "huggingface_id": "mistralai/Mixtral-8x7B-Instruct-v0.1",
+    "supported_runtimes": [
+      "ollama",
+      "gguf"
+    ],
+    "use_cases": [
+      "analysis",
+      "tool-use"
+    ],
+    "notes": "MoE architecture with strong throughput on capable GPUs.",
+    "license": "Apache-2.0"
+  },
+  {
+    "name": "qwen2.5:72b",
+    "display_name": "Qwen2.5 72B",
+    "category": "general",
+    "min_ram": 48,
+    "recommended_ram": 64,
+    "gpu_required": true,
+    "vram_required": 40,
+    "size_billion_params": 72,
+    "ollama_tag": "qwen2.5:72b",
+    "huggingface_id": "Qwen/Qwen2.5-72B-Instruct",
+    "supported_runtimes": [
+      "ollama",
+      "gguf"
+    ],
+    "use_cases": [
+      "analysis",
+      "reasoning"
+    ],
+    "notes": "High-capacity model for advanced local inference.",
+    "license": "Apache-2.0"
+  },
+  {
+    "name": "deepseek-coder:1.3b",
+    "display_name": "DeepSeek Coder 1.3B",
+    "category": "coding",
+    "min_ram": 4,
+    "recommended_ram": 6,
+    "gpu_required": false,
+    "vram_required": null,
+    "size_billion_params": 1.3,
+    "ollama_tag": "deepseek-coder:1.3b",
+    "huggingface_id": "deepseek-ai/deepseek-coder-1.3b-instruct",
+    "supported_runtimes": [
+      "ollama",
+      "gguf"
+    ],
+    "use_cases": [
+      "code-completion",
+      "refactoring"
+    ],
+    "notes": "Good starting point for low-RAM coding assistance.",
+    "license": "DeepSeek License"
+  },
+  {
+    "name": "starcoder2:3b",
+    "display_name": "StarCoder2 3B",
+    "category": "coding",
+    "min_ram": 5,
+    "recommended_ram": 8,
+    "gpu_required": false,
+    "vram_required": null,
+    "size_billion_params": 3,
+    "ollama_tag": "starcoder2:3b",
+    "huggingface_id": "bigcode/starcoder2-3b",
+    "supported_runtimes": [
+      "ollama",
+      "gguf"
+    ],
+    "use_cases": [
+      "code-completion",
+      "bug-fixing"
+    ],
+    "notes": "Small coding model with strong language coverage.",
+    "license": "BigCode OpenRAIL-M"
+  },
+  {
+    "name": "qwen2.5-coder:1.5b",
+    "display_name": "Qwen2.5-Coder 1.5B",
+    "category": "coding",
+    "min_ram": 4,
+    "recommended_ram": 8,
+    "gpu_required": false,
+    "vram_required": null,
+    "size_billion_params": 1.5,
+    "ollama_tag": "qwen2.5-coder:1.5b",
+    "huggingface_id": "Qwen/Qwen2.5-Coder-1.5B-Instruct",
+    "supported_runtimes": [
+      "ollama",
+      "gguf"
+    ],
+    "use_cases": [
+      "code-completion",
+      "code-explanation"
+    ],
+    "notes": "Fast response speed for editor-integrated coding tasks.",
+    "license": "Apache-2.0"
+  },
+  {
+    "name": "deepseek-coder:6.7b",
+    "display_name": "DeepSeek Coder 6.7B",
+    "category": "coding",
+    "min_ram": 10,
+    "recommended_ram": 16,
+    "gpu_required": false,
+    "vram_required": 8,
+    "size_billion_params": 6.7,
+    "ollama_tag": "deepseek-coder:6.7b",
+    "huggingface_id": "deepseek-ai/deepseek-coder-6.7b-instruct",
+    "supported_runtimes": [
+      "ollama",
+      "gguf"
+    ],
+    "use_cases": [
+      "code-generation",
+      "unit-tests"
+    ],
+    "notes": "Strong mid-range coding quality with practical latency.",
+    "license": "DeepSeek License"
+  },
+  {
+    "name": "codellama:7b",
+    "display_name": "CodeLlama 7B",
+    "category": "coding",
+    "min_ram": 8,
+    "recommended_ram": 14,
+    "gpu_required": false,
+    "vram_required": 6,
+    "size_billion_params": 7,
+    "ollama_tag": "codellama:7b",
+    "huggingface_id": "codellama/CodeLlama-7b-Instruct-hf",
+    "supported_runtimes": [
+      "ollama",
+      "gguf"
+    ],
+    "use_cases": [
+      "code-generation",
+      "debugging"
+    ],
+    "notes": "Widely used coding baseline with predictable behavior.",
+    "license": "Llama 2 Community License"
+  },
+  {
+    "name": "qwen2.5-coder:7b",
+    "display_name": "Qwen2.5-Coder 7B",
+    "category": "coding",
+    "min_ram": 8,
+    "recommended_ram": 16,
+    "gpu_required": false,
+    "vram_required": 8,
+    "size_billion_params": 7,
+    "ollama_tag": "qwen2.5-coder:7b",
+    "huggingface_id": "Qwen/Qwen2.5-Coder-7B-Instruct",
+    "supported_runtimes": [
+      "ollama",
+      "gguf"
+    ],
+    "use_cases": [
+      "code-generation",
+      "review"
+    ],
+    "notes": "High coding quality for everyday development workflows.",
+    "license": "Apache-2.0"
+  },
+  {
+    "name": "codellama:13b",
+    "display_name": "CodeLlama 13B",
+    "category": "coding",
+    "min_ram": 16,
+    "recommended_ram": 24,
+    "gpu_required": true,
+    "vram_required": 12,
+    "size_billion_params": 13,
+    "ollama_tag": "codellama:13b",
+    "huggingface_id": "codellama/CodeLlama-13b-Instruct-hf",
+    "supported_runtimes": [
+      "ollama",
+      "gguf"
+    ],
+    "use_cases": [
+      "code-generation",
+      "architecture"
+    ],
+    "notes": "Large coding context handling for advanced repositories.",
+    "license": "Llama 2 Community License"
+  },
+  {
+    "name": "deepseek-r1:32b",
+    "display_name": "DeepSeek-R1 32B",
+    "category": "coding",
+    "min_ram": 32,
+    "recommended_ram": 48,
+    "gpu_required": true,
+    "vram_required": 24,
+    "size_billion_params": 32,
+    "ollama_tag": "deepseek-r1:32b",
+    "huggingface_id": "deepseek-ai/DeepSeek-R1-Distill-Qwen-32B",
+    "supported_runtimes": [
+      "ollama",
+      "gguf"
+    ],
+    "use_cases": [
+      "complex-debugging",
+      "reasoning"
+    ],
+    "notes": "Reasoning-heavy model for complex coding tasks.",
+    "license": "DeepSeek License"
+  },
+  {
+    "name": "starcoder2:15b",
+    "display_name": "StarCoder2 15B",
+    "category": "coding",
+    "min_ram": 20,
+    "recommended_ram": 32,
+    "gpu_required": true,
+    "vram_required": 16,
+    "size_billion_params": 15,
+    "ollama_tag": "starcoder2:15b",
+    "huggingface_id": "bigcode/starcoder2-15b",
+    "supported_runtimes": [
+      "ollama",
+      "gguf"
+    ],
+    "use_cases": [
+      "code-generation",
+      "large-refactors"
+    ],
+    "notes": "High-end coding model with broad language support.",
+    "license": "BigCode OpenRAIL-M"
+  },
+  {
+    "name": "mixedbread-ai/mxbai-embed-large-v1",
+    "display_name": "mixedbread-ai/mxbai-embed-large-v1",
+    "category": "general",
+    "min_ram": 8,
+    "recommended_ram": 16,
+    "gpu_required": false,
+    "vram_required": null,
+    "size_billion_params": 7,
+    "ollama_tag": null,
+    "huggingface_id": "mixedbread-ai/mxbai-embed-large-v1",
+    "supported_runtimes": [
+      "gguf"
+    ],
+    "use_cases": [
+      "chat"
+    ],
+    "notes": "Imported from Hugging Face (downloads: 3913713, updated: unknown).",
+    "license": "apache-2.0"
+  },
+  {
+    "name": "unsloth/gemma-4-26b-a4b-it-gguf",
+    "display_name": "unsloth/gemma-4-26B-A4B-it-GGUF",
+    "category": "general",
+    "min_ram": 16,
+    "recommended_ram": 32,
+    "gpu_required": true,
+    "vram_required": 20,
+    "size_billion_params": 26,
+    "ollama_tag": null,
+    "huggingface_id": "unsloth/gemma-4-26B-A4B-it-GGUF",
+    "supported_runtimes": [
+      "gguf"
+    ],
+    "use_cases": [
+      "chat"
+    ],
+    "notes": "Imported from Hugging Face (downloads: 1803416, updated: unknown).",
+    "license": "apache-2.0"
+  },
+  {
+    "name": "unsloth/qwen3.5-35b-a3b-gguf",
+    "display_name": "unsloth/Qwen3.5-35B-A3B-GGUF",
+    "category": "general",
+    "min_ram": 16,
+    "recommended_ram": 32,
+    "gpu_required": true,
+    "vram_required": 26,
+    "size_billion_params": 35,
+    "ollama_tag": null,
+    "huggingface_id": "unsloth/Qwen3.5-35B-A3B-GGUF",
+    "supported_runtimes": [
+      "gguf"
+    ],
+    "use_cases": [
+      "chat"
+    ],
+    "notes": "Imported from Hugging Face (downloads: 1312853, updated: unknown).",
+    "license": "apache-2.0"
+  },
+  {
+    "name": "bartowski/gemma-2-2b-it-gguf",
+    "display_name": "bartowski/gemma-2-2b-it-GGUF",
+    "category": "general",
+    "min_ram": 4,
+    "recommended_ram": 8,
+    "gpu_required": false,
+    "vram_required": null,
+    "size_billion_params": 2,
+    "ollama_tag": null,
+    "huggingface_id": "bartowski/gemma-2-2b-it-GGUF",
+    "supported_runtimes": [
+      "gguf"
+    ],
+    "use_cases": [
+      "chat"
+    ],
+    "notes": "Imported from Hugging Face (downloads: 1255647, updated: unknown).",
+    "license": "gemma"
+  },
+  {
+    "name": "lmstudio-community/qwen3.5-9b-gguf",
+    "display_name": "lmstudio-community/Qwen3.5-9B-GGUF",
+    "category": "general",
+    "min_ram": 16,
+    "recommended_ram": 32,
+    "gpu_required": false,
+    "vram_required": null,
+    "size_billion_params": 9,
+    "ollama_tag": null,
+    "huggingface_id": "lmstudio-community/Qwen3.5-9B-GGUF",
+    "supported_runtimes": [
+      "gguf"
+    ],
+    "use_cases": [
+      "chat"
+    ],
+    "notes": "Imported from Hugging Face (downloads: 1234423, updated: unknown).",
+    "license": "apache-2.0"
+  },
+  {
+    "name": "lmg-anon/vntl-llama3-8b-v2-gguf",
+    "display_name": "lmg-anon/vntl-llama3-8b-v2-gguf",
+    "category": "general",
+    "min_ram": 8,
+    "recommended_ram": 16,
+    "gpu_required": false,
+    "vram_required": null,
+    "size_billion_params": 8,
+    "ollama_tag": null,
+    "huggingface_id": "lmg-anon/vntl-llama3-8b-v2-gguf",
+    "supported_runtimes": [
+      "gguf"
+    ],
+    "use_cases": [
+      "chat"
+    ],
+    "notes": "Imported from Hugging Face (downloads: 1196033, updated: unknown).",
+    "license": "llama3"
+  },
+  {
+    "name": "unsloth/gemma-4-31b-it-gguf",
+    "display_name": "unsloth/gemma-4-31B-it-GGUF",
+    "category": "general",
+    "min_ram": 16,
+    "recommended_ram": 32,
+    "gpu_required": true,
+    "vram_required": 23,
+    "size_billion_params": 31,
+    "ollama_tag": null,
+    "huggingface_id": "unsloth/gemma-4-31B-it-GGUF",
+    "supported_runtimes": [
+      "gguf"
+    ],
+    "use_cases": [
+      "chat"
+    ],
+    "notes": "Imported from Hugging Face (downloads: 1181417, updated: unknown).",
+    "license": "apache-2.0"
+  },
+  {
+    "name": "ggml-org/models-moved",
+    "display_name": "ggml-org/models-moved",
+    "category": "general",
+    "min_ram": 8,
+    "recommended_ram": 16,
+    "gpu_required": false,
+    "vram_required": null,
+    "size_billion_params": 7,
+    "ollama_tag": null,
+    "huggingface_id": "ggml-org/models-moved",
+    "supported_runtimes": [
+      "gguf"
+    ],
+    "use_cases": [
+      "chat"
+    ],
+    "notes": "Imported from Hugging Face (downloads: 1112082, updated: unknown).",
+    "license": "Unknown"
+  },
+  {
+    "name": "unsloth/gemma-4-e4b-it-gguf",
+    "display_name": "unsloth/gemma-4-E4B-it-GGUF",
+    "category": "general",
+    "min_ram": 8,
+    "recommended_ram": 16,
+    "gpu_required": false,
+    "vram_required": null,
+    "size_billion_params": 4,
+    "ollama_tag": null,
+    "huggingface_id": "unsloth/gemma-4-E4B-it-GGUF",
+    "supported_runtimes": [
+      "gguf"
+    ],
+    "use_cases": [
+      "chat"
+    ],
+    "notes": "Imported from Hugging Face (downloads: 1100025, updated: unknown).",
+    "license": "apache-2.0"
+  },
+  {
+    "name": "hauhaucs/qwen3.5-35b-a3b-uncensored-hauhaucs-aggressive",
+    "display_name": "HauhauCS/Qwen3.5-35B-A3B-Uncensored-HauhauCS-Aggressive",
+    "category": "general",
+    "min_ram": 16,
+    "recommended_ram": 32,
+    "gpu_required": true,
+    "vram_required": 26,
+    "size_billion_params": 35,
+    "ollama_tag": null,
+    "huggingface_id": "HauhauCS/Qwen3.5-35B-A3B-Uncensored-HauhauCS-Aggressive",
+    "supported_runtimes": [
+      "gguf"
+    ],
+    "use_cases": [
+      "chat"
+    ],
+    "notes": "Imported from Hugging Face (downloads: 1063984, updated: unknown).",
+    "license": "apache-2.0"
+  },
+  {
+    "name": "unsloth/qwen3.5-9b-gguf",
+    "display_name": "unsloth/Qwen3.5-9B-GGUF",
+    "category": "general",
+    "min_ram": 16,
+    "recommended_ram": 32,
+    "gpu_required": false,
+    "vram_required": null,
+    "size_billion_params": 9,
+    "ollama_tag": null,
+    "huggingface_id": "unsloth/Qwen3.5-9B-GGUF",
+    "supported_runtimes": [
+      "gguf"
+    ],
+    "use_cases": [
+      "chat"
+    ],
+    "notes": "Imported from Hugging Face (downloads: 944550, updated: unknown).",
+    "license": "apache-2.0"
+  },
+  {
+    "name": "jackrong/qwen3.5-27b-claude-4.6-opus-reasoning-distilled-gguf",
+    "display_name": "Jackrong/Qwen3.5-27B-Claude-4.6-Opus-Reasoning-Distilled-GGUF",
+    "category": "general",
+    "min_ram": 16,
+    "recommended_ram": 32,
+    "gpu_required": true,
+    "vram_required": 20,
+    "size_billion_params": 27,
+    "ollama_tag": null,
+    "huggingface_id": "Jackrong/Qwen3.5-27B-Claude-4.6-Opus-Reasoning-Distilled-GGUF",
+    "supported_runtimes": [
+      "gguf"
+    ],
+    "use_cases": [
+      "chat"
+    ],
+    "notes": "Imported from Hugging Face (downloads: 920914, updated: unknown).",
+    "license": "apache-2.0"
+  },
+  {
+    "name": "hauhaucs/qwen3.5-9b-uncensored-hauhaucs-aggressive",
+    "display_name": "HauhauCS/Qwen3.5-9B-Uncensored-HauhauCS-Aggressive",
+    "category": "general",
+    "min_ram": 8,
+    "recommended_ram": 16,
+    "gpu_required": false,
+    "vram_required": null,
+    "size_billion_params": 7,
+    "ollama_tag": null,
+    "huggingface_id": "HauhauCS/Qwen3.5-9B-Uncensored-HauhauCS-Aggressive",
+    "supported_runtimes": [
+      "gguf"
+    ],
+    "use_cases": [
+      "chat"
+    ],
+    "notes": "Imported from Hugging Face (downloads: 905234, updated: unknown).",
+    "license": "apache-2.0"
+  },
+  {
+    "name": "lmstudio-community/gemma-4-26b-a4b-it-gguf",
+    "display_name": "lmstudio-community/gemma-4-26B-A4B-it-GGUF",
+    "category": "general",
+    "min_ram": 16,
+    "recommended_ram": 32,
+    "gpu_required": true,
+    "vram_required": 20,
+    "size_billion_params": 26,
+    "ollama_tag": null,
+    "huggingface_id": "lmstudio-community/gemma-4-26B-A4B-it-GGUF",
+    "supported_runtimes": [
+      "gguf"
+    ],
+    "use_cases": [
+      "chat"
+    ],
+    "notes": "Imported from Hugging Face (downloads: 851193, updated: unknown).",
+    "license": "Unknown"
+  },
+  {
+    "name": "hugging-quants/llama-3.2-1b-instruct-q8_0-gguf",
+    "display_name": "hugging-quants/Llama-3.2-1B-Instruct-Q8_0-GGUF",
+    "category": "general",
+    "min_ram": 4,
+    "recommended_ram": 8,
+    "gpu_required": false,
+    "vram_required": null,
+    "size_billion_params": 1,
+    "ollama_tag": null,
+    "huggingface_id": "hugging-quants/Llama-3.2-1B-Instruct-Q8_0-GGUF",
+    "supported_runtimes": [
+      "gguf"
+    ],
+    "use_cases": [
+      "chat"
+    ],
+    "notes": "Imported from Hugging Face (downloads: 834549, updated: unknown).",
+    "license": "Unknown"
+  },
+  {
+    "name": "ggml-org/smolvlm-500m-instruct-gguf",
+    "display_name": "ggml-org/SmolVLM-500M-Instruct-GGUF",
+    "category": "general",
+    "min_ram": 8,
+    "recommended_ram": 16,
+    "gpu_required": false,
+    "vram_required": null,
+    "size_billion_params": 7,
+    "ollama_tag": null,
+    "huggingface_id": "ggml-org/SmolVLM-500M-Instruct-GGUF",
+    "supported_runtimes": [
+      "gguf"
+    ],
+    "use_cases": [
+      "chat"
+    ],
+    "notes": "Imported from Hugging Face (downloads: 741834, updated: unknown).",
+    "license": "apache-2.0"
+  },
+  {
+    "name": "unsloth/qwen3.5-27b-gguf",
+    "display_name": "unsloth/Qwen3.5-27B-GGUF",
+    "category": "general",
+    "min_ram": 16,
+    "recommended_ram": 32,
+    "gpu_required": true,
+    "vram_required": 20,
+    "size_billion_params": 27,
+    "ollama_tag": null,
+    "huggingface_id": "unsloth/Qwen3.5-27B-GGUF",
+    "supported_runtimes": [
+      "gguf"
+    ],
+    "use_cases": [
+      "chat"
+    ],
+    "notes": "Imported from Hugging Face (downloads: 675392, updated: unknown).",
+    "license": "apache-2.0"
+  },
+  {
+    "name": "unsloth/qwen3.5-4b-gguf",
+    "display_name": "unsloth/Qwen3.5-4B-GGUF",
+    "category": "general",
+    "min_ram": 8,
+    "recommended_ram": 16,
+    "gpu_required": false,
+    "vram_required": null,
+    "size_billion_params": 4,
+    "ollama_tag": null,
+    "huggingface_id": "unsloth/Qwen3.5-4B-GGUF",
+    "supported_runtimes": [
+      "gguf"
+    ],
+    "use_cases": [
+      "chat"
+    ],
+    "notes": "Imported from Hugging Face (downloads: 603603, updated: unknown).",
+    "license": "apache-2.0"
+  },
+  {
+    "name": "unsloth/gemma-4-e2b-it-gguf",
+    "display_name": "unsloth/gemma-4-E2B-it-GGUF",
+    "category": "general",
+    "min_ram": 4,
+    "recommended_ram": 8,
+    "gpu_required": false,
+    "vram_required": null,
+    "size_billion_params": 2,
+    "ollama_tag": null,
+    "huggingface_id": "unsloth/gemma-4-E2B-it-GGUF",
+    "supported_runtimes": [
+      "gguf"
+    ],
+    "use_cases": [
+      "chat"
+    ],
+    "notes": "Imported from Hugging Face (downloads: 540991, updated: unknown).",
+    "license": "apache-2.0"
+  },
+  {
+    "name": "jackrong/qwen3.5-9b-claude-4.6-opus-reasoning-distilled-gguf",
+    "display_name": "Jackrong/Qwen3.5-9B-Claude-4.6-Opus-Reasoning-Distilled-GGUF",
+    "category": "general",
+    "min_ram": 16,
+    "recommended_ram": 32,
+    "gpu_required": false,
+    "vram_required": null,
+    "size_billion_params": 9,
+    "ollama_tag": null,
+    "huggingface_id": "Jackrong/Qwen3.5-9B-Claude-4.6-Opus-Reasoning-Distilled-GGUF",
+    "supported_runtimes": [
+      "gguf"
+    ],
+    "use_cases": [
+      "chat"
+    ],
+    "notes": "Imported from Hugging Face (downloads: 538128, updated: unknown).",
+    "license": "apache-2.0"
+  }
+]

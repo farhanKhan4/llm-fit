@@ -1,0 +1,35 @@
+# Node modules
+node_modules/
+
+# Logs
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Environment variables
+.env
+.env.local
+.env.*.local
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# IDE files
+.vscode/
+.idea/
+
+# Build / temp
+dist/
+build/
+tmp/
+temp/
+
+# Package lock (optional - usually keep it)
+# package-lock.json
+
+# CLI cache (if you add later)
+.cache/
+
+# Coverage
+coverage/
