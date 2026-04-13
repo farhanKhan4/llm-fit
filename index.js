@@ -9,6 +9,7 @@ import { registerRecommendCommand } from './commands/recommend.js';
 import { registerModelsCommand } from './commands/models.js';
 import { registerInstallCommand } from './commands/install.js';
 import { registerUpdateModelsCommand } from './commands/update-models.js';
+import { printBanner } from './utils/banner.js';
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
@@ -30,6 +31,8 @@ registerRecommendCommand(program);
 registerModelsCommand(program);
 registerInstallCommand(program);
 registerUpdateModelsCommand(program);
+
+printBanner();
 
 const firstArg = process.argv[2];
 if (
