@@ -2,7 +2,7 @@ import path from 'node:path';
 import { promises as fs } from 'node:fs';
 import { fileURLToPath } from 'node:url';
 import ora from 'ora';
-import { scanSystemHardware } from '../services/systemScanner.js';
+import { scanSystemWithScore } from './scan.js';
 import { rankModelsForSystem } from '../services/recommender.js';
 import {
   formatRecommendationBuckets,
@@ -39,8 +39,8 @@ export function registerRecommendCommand(program) {
       const spinner = ora('Scanning your system hardware...').start();
 
       try {
-        const [system, models] = await Promise.all([
-          scanSystemHardware(),
+        const [{ system, score }, models] = await Promise.all([
+          scanSystemWithScore(),
           loadModels()
         ]);
 
@@ -48,6 +48,7 @@ export function registerRecommendCommand(program) {
 
         const buckets = rankModelsForSystem(system, models, category);
         console.log(formatSectionHeader('Model Recommendations'));
+        console.log(`Readiness score: ${score.score}/100 (${score.grade} - ${score.label})`);
         console.log(formatRecommendationBuckets(buckets));
         process.exit(0);
       } catch (error) {
