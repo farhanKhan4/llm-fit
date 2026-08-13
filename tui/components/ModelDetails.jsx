@@ -1,9 +1,10 @@
 import React, { useState } from 'react';
 import { Box, Text, useInput, useApp } from 'ink';
+import InstallScreen from './InstallScreen.jsx';
 
 export default function ModelDetails({ modelData, systemData, onBack }) {
   const { exit } = useApp();
-  const [actionMessage, setActionMessage] = useState(null);
+  const [showInstall, setShowInstall] = useState(false);
 
   useInput((input, key) => {
     if (input === 'q') {
@@ -15,9 +16,18 @@ export default function ModelDetails({ modelData, systemData, onBack }) {
       return;
     }
     if (key.return) {
-      setActionMessage('Installation will be available in Phase 6.');
+      setShowInstall(true);
     }
-  });
+  }, { isActive: !showInstall });
+
+  if (showInstall) {
+    return (
+      <InstallScreen
+        modelData={modelData}
+        onBack={() => setShowInstall(false)}
+      />
+    );
+  }
 
   const { model, score, reasons, group } = modelData;
 
@@ -50,7 +60,7 @@ export default function ModelDetails({ modelData, systemData, onBack }) {
           <Text bold color="white">{model.display_name}</Text>
         </Box>
         <Text color="gray">────────────────────────────────────────────────</Text>
-        
+
         <Box flexDirection="column" marginY={1}>
           {renderRow('Parameters', `${model.size_billion_params}B`)}
           {renderRow('Category', model.category)}
@@ -80,7 +90,7 @@ export default function ModelDetails({ modelData, systemData, onBack }) {
           {renderRow('GPU Required', model.gpu_required ? 'Yes' : 'No')}
           {renderRow('Available VRAM', systemData.gpu?.vram ? `${systemData.gpu.vram} GB` : 'N/A')}
         </Box>
-        
+
         <Box marginTop={1}>
           <Box width={2}>
             <Text color="green">❯</Text>
@@ -88,15 +98,9 @@ export default function ModelDetails({ modelData, systemData, onBack }) {
           <Text color="white">[ Install ]</Text>
         </Box>
 
-        {actionMessage && (
-          <Box marginTop={1}>
-            <Text color="yellow">{actionMessage}</Text>
-          </Box>
-        )}
-
       </Box>
       <Box borderStyle="single" borderTop={false} paddingX={1} borderColor="cyan">
-        <Text color="gray">Enter Select   Esc Back   q Quit</Text>
+        <Text color="gray">Enter Install   Esc Back   q Quit</Text>
       </Box>
     </Box>
   );
