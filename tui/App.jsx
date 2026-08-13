@@ -1,14 +1,18 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Box, Text, useInput, useApp } from 'ink';
 import Header from './components/Header.jsx';
 import SystemCard from './components/SystemCard.jsx';
 import QuickActions from './components/QuickActions.jsx';
 import Footer from './components/Footer.jsx';
+import { scanSystemHardware } from '../services/systemScanner.js';
 
 export default function App() {
   const { exit } = useApp();
   const [selectedIndex, setSelectedIndex] = useState(0);
   const [actionMessage, setActionMessage] = useState(null);
+  
+  const [systemData, setSystemData] = useState(null);
+  const [scanError, setScanError] = useState(null);
 
   const actions = [
     'Recommended Models',
@@ -16,6 +20,16 @@ export default function App() {
     'Installed Models',
     'System Information'
   ];
+
+  useEffect(() => {
+    scanSystemHardware()
+      .then(data => {
+        setSystemData(data);
+      })
+      .catch(err => {
+        setScanError(err.message || 'Unknown scanning error');
+      });
+  }, []);
 
   useInput((input, key) => {
     if (input === 'q' || key.escape) {
@@ -51,7 +65,7 @@ export default function App() {
         paddingY={1}
       >
         <Text bold>Dashboard</Text>
-        <SystemCard />
+        <SystemCard data={systemData} error={scanError} />
         <Box marginTop={1}>
           <QuickActions 
             actions={actions} 
