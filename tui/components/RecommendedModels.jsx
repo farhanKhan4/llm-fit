@@ -4,6 +4,7 @@ import fs from 'node:fs/promises';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { rankModelsForSystem } from '../../services/recommender.js';
+import ModelDetails from './ModelDetails.jsx';
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
@@ -17,6 +18,8 @@ export default function RecommendedModels({ systemData, onBack }) {
   const [flatList, setFlatList] = useState([]);
   const [selectedIndex, setSelectedIndex] = useState(0);
   const [actionMessage, setActionMessage] = useState(null);
+  
+  const [showingDetails, setShowingDetails] = useState(false);
 
   useEffect(() => {
     async function fetchRecommendations() {
@@ -66,9 +69,19 @@ export default function RecommendedModels({ systemData, onBack }) {
     }
 
     if (key.return && flatList.length > 0) {
-      setActionMessage('Model details will be available in Phase 5.');
+      setShowingDetails(true);
     }
-  });
+  }, { isActive: !showingDetails });
+
+  if (showingDetails) {
+    return (
+      <ModelDetails 
+        modelData={flatList[selectedIndex]} 
+        systemData={systemData} 
+        onBack={() => setShowingDetails(false)} 
+      />
+    );
+  }
 
   if (error) {
     return (
