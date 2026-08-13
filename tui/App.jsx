@@ -5,6 +5,7 @@ import SystemCard from './components/SystemCard.jsx';
 import QuickActions from './components/QuickActions.jsx';
 import Footer from './components/Footer.jsx';
 import RecommendedModels from './components/RecommendedModels.jsx';
+import InstalledModels from './components/InstalledModels.jsx';
 import { scanSystemHardware } from '../services/systemScanner.js';
 
 export default function App() {
@@ -53,14 +54,20 @@ export default function App() {
     if (key.return) {
       if (selectedIndex === 0) {
         setCurrentView('recommended');
+      } else if (selectedIndex === 2) {
+        setCurrentView('installed');
       } else {
-        setActionMessage(`${actions[selectedIndex]} — coming in Phase 5`);
+        setActionMessage(`${actions[selectedIndex]} — coming soon`);
       }
     }
   }, { isActive: currentView === 'dashboard' });
 
   if (currentView === 'recommended') {
     return <RecommendedModels systemData={systemData} onBack={() => setCurrentView('dashboard')} />;
+  }
+
+  if (currentView === 'installed') {
+    return <InstalledModels onBack={() => setCurrentView('dashboard')} />;
   }
 
   return (
