@@ -4,10 +4,13 @@ import Header from './components/Header.jsx';
 import SystemCard from './components/SystemCard.jsx';
 import QuickActions from './components/QuickActions.jsx';
 import Footer from './components/Footer.jsx';
+import RecommendedModels from './components/RecommendedModels.jsx';
 import { scanSystemHardware } from '../services/systemScanner.js';
 
 export default function App() {
   const { exit } = useApp();
+  const [currentView, setCurrentView] = useState('dashboard');
+  
   const [selectedIndex, setSelectedIndex] = useState(0);
   const [actionMessage, setActionMessage] = useState(null);
   
@@ -48,9 +51,17 @@ export default function App() {
     }
 
     if (key.return) {
-      setActionMessage(`${actions[selectedIndex]} — coming in Phase 4`);
+      if (selectedIndex === 0) {
+        setCurrentView('recommended');
+      } else {
+        setActionMessage(`${actions[selectedIndex]} — coming in Phase 5`);
+      }
     }
-  });
+  }, { isActive: currentView === 'dashboard' });
+
+  if (currentView === 'recommended') {
+    return <RecommendedModels systemData={systemData} onBack={() => setCurrentView('dashboard')} />;
+  }
 
   return (
     <Box flexDirection="column" width={56}>
